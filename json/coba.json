@@ -1,0 +1,27 @@
+[{
+        "nama": "Sandhika",
+        "umur": 32,
+        "nrp": "MGF17020158",
+        "hobby": [
+            "coding",
+            "gaming"
+        ],
+        "pembimbing": {
+            "pembimbing1": "Nur Achmad Agus Ismail",
+            "pembimbing2": "Erik Doank"
+        }
+    },
+    {
+        "nama": "Sandhika",
+        "umur": 32,
+        "nrp": "MGF17020158",
+        "hobby": [
+            "coding",
+            "gaming"
+        ],
+        "pembimbing": {
+            "pembimbing1": "Nur Achmad Agus Ismail",
+            "pembimbing2": "Erik Doank"
+        }
+    }
+]
