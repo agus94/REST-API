@@ -15,13 +15,13 @@ function searchMovie() {
 
                 $.each(movies, function (i, data) {
                     $('#movie-list').append(`
-                    <div class="col-md-4">    
+                    <div class="col-md-2">
                         <div class="card mb-3">
                             <img src="` + data.Poster + `" class="card-img-top" alt="...">
                             <div class="card-body">
                             <h5 class="card-title">` + data.Title + `</h5>
                             <h6 class="card-subtitle mb-2 text-muted">` + data.Year + `</h6>
-                            <a href="#" class="card-link see-detail" data-toggle="modal" data-target="#exampleModal" data-id="`+ data.imdbID +`">See Detail</a>
+                            <a href="#" class="card-link see-detail" data-toggle="modal" data-target="#exampleModal" data-id="` + data.imdbID + `">See Detail</a>
                             </div>
                         </div>
                     </div>
@@ -52,8 +52,8 @@ $('#search-input').on('keyup', function (e) {
 })
 
 
-$('#movie-list').on('click', '.see-detail', function() {
-    
+$('#movie-list').on('click', '.see-detail', function () {
+
     $.ajax({
         url: 'http://www.omdbapi.com',
         dataType: 'json',
@@ -62,22 +62,22 @@ $('#movie-list').on('click', '.see-detail', function() {
             'apikey': 'd07b2fea',
             'i': $(this).data('id'),
         },
-        success: function(movie) {
-            if( movie.Response === "True" ){
+        success: function (movie) {
+            if (movie.Response === "True") {
                 $('.modal-body').html(`
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-md-4">
-                            <img src="`+ movie.Poster +`" class="img-fluid">
+                            <img src="` + movie.Poster + `" class="img-fluid">
                         </div>
                         <div class="col-md-8">
                             <ul class="list-group">
-                                <li class="list-group-item"><h3>`+ movie.Title +`</h3></li>
-                                <li class="list-group-item">`+ movie.Title +`</li>
-                                <li class="list-group-item">`+ movie.Released +`</li>
-                                <li class="list-group-item">`+ movie.Genre +`</li>
-                                <li class="list-group-item">`+ movie.Director +`</li>
-                                <li class="list-group-item">`+ movie.Actors +`</li>
+                                <li class="list-group-item"><h3>` + movie.Title + `</h3></li>
+                                <li class="list-group-item">` + movie.Title + `</li>
+                                <li class="list-group-item">` + movie.Released + `</li>
+                                <li class="list-group-item">` + movie.Genre + `</li>
+                                <li class="list-group-item">` + movie.Director + `</li>
+                                <li class="list-group-item">` + movie.Actors + `</li>
                             </ul>
                         </div>
                     </div>
